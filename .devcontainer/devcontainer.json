@@ -1,0 +1,30 @@
+{
+  "name": "support-ai-platform",
+  "image": "mcr.microsoft.com/devcontainers/java:1-21-bullseye",
+  "features": {
+    "ghcr.io/devcontainers/features/docker-in-docker:2": {},
+    "ghcr.io/devcontainers/features/node:1": {
+      "version": "20"
+    }
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "vscjava.vscode-java-pack",
+        "ms-azuretools.vscode-docker",
+        "dbaeumer.vscode-eslint",
+        "bradlc.vscode-tailwindcss"
+      ]
+    }
+  },
+  "forwardPorts": [8080, 8761, 3000, 3001, 9411, 5432],
+  "portsAttributes": {
+    "8080": { "label": "API Gateway" },
+    "8761": { "label": "Eureka" },
+    "3000": { "label": "Frontend" },
+    "3001": { "label": "Grafana" },
+    "9411": { "label": "Zipkin" },
+    "5432": { "label": "Postgres" }
+  },
+  "postCreateCommand": "echo 'Codespace ready. Run docker compose up -d to start infra.'"
+}

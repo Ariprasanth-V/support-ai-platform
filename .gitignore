@@ -1,0 +1,11 @@
+target/
+*.class
+node_modules/
+dist/
+.env
+*.log
+.idea/
+.vscode/
+!.vscode/extensions.json
+*.iml
+docker-compose.override.yml
